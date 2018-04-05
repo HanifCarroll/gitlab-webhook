@@ -9,7 +9,7 @@ const jira = new JiraApi({
   strictSSL: true
 });
 
-module.exports.getAndTransitionIssues = async function getAndTransitionIssues() {
+module.exports.getAndTransitionIssues = async () => {
   try {
     let issues = await getPrestagingIssues();
     let transition = await transitionIssues(issues);
@@ -40,7 +40,7 @@ async function transitionIssues(issues) {
     await Promise.all(
       issues.map(async issue => {
         await jira.transitionIssue(issue, {
-          transition: { id: '101' }
+          transition: { id: '131' }
         });
       })
     );
