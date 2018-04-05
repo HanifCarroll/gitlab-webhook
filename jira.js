@@ -22,7 +22,7 @@ async function getPrestagingIssues() {
   try {
     // Search jira for all issues in project with status = deploy-prestaging
     const { issues } = await jira.searchJira(
-      'project=QWT and status = deploy-prestaging'
+      'project=QWT and status=deploy-prestaging'
     );
 
     const allIssues = [];
